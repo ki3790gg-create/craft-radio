@@ -1,0 +1,13 @@
+# Secrets
+.env
+credentials.json
+token.json
+
+# Runtime output
+.tmp/
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
