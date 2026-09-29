@@ -1,34 +1,22 @@
 {
   "date": "2026-09-29",
-  "collected_at": "2026-09-29T11:10:44.818141+00:00",
-  "record_count": 47,
+  "collected_at": "2026-09-29T12:55:04.927966+00:00",
+  "record_count": 42,
   "item_signals": [
     [
-      "crochet bookmark",
-      3
+      "비즈 키링",
+      2
+    ],
+    [
+      "미니가방 키링",
+      2
     ],
     [
       "lucky pouch",
       2
     ],
     [
-      "rose bag",
-      2
-    ],
-    [
-      "crochet keychain",
-      2
-    ],
-    [
-      "비즈 키링",
-      1
-    ],
-    [
-      "아보카도 키링",
-      1
-    ],
-    [
-      "avocado keychain",
+      "물고기 키링",
       1
     ],
     [
@@ -40,7 +28,19 @@
       1
     ],
     [
-      "물고기 키링",
+      "아보카도 키링",
+      1
+    ],
+    [
+      "avocado keychain",
+      1
+    ],
+    [
+      "완성된 가방",
+      1
+    ],
+    [
+      "매듭 키링",
       1
     ]
   ],
@@ -49,73 +49,34 @@
       "channel_title": "쎄비 SEVY",
       "channel_url": "https://www.youtube.com/channel/UCyZYfXT3Ukggeo6j9L7VwSg",
       "subscriber_count": 376000,
-      "total_views": 22168,
+      "total_views": 23066,
       "relevant_video_count": 1,
       "cover_video_id": "1HmKzM9OjzA",
       "cover_is_short": false
     },
     {
-      "channel_title": "CJ Design",
-      "channel_url": "https://www.youtube.com/channel/UCA2PfmY2GPMK14mEIYbUbAA",
-      "subscriber_count": 330000,
-      "total_views": 3510,
+      "channel_title": "조은fine",
+      "channel_url": "https://www.youtube.com/channel/UCZN8KXIefDEhkuK8KRgAqhA",
+      "subscriber_count": 233000,
+      "total_views": 19992,
       "relevant_video_count": 1,
-      "cover_video_id": "WzW72SiZlOU",
+      "cover_video_id": "7AVaqJ8Rd1Q",
       "cover_is_short": false
     }
   ],
   "videos": [
     {
-      "video_id": "xAtBHHhnjZg",
-      "title": "Custom Formula1 Bracelet🧡🏎️🏁✨ #beadedaccessories #diy #handmade #bracelet",
-      "channel_title": "Tiny Treasures",
-      "channel_url": "https://www.youtube.com/channel/UC26Cd2hcKA85Ud--GIqzKtA",
-      "url": "https://www.youtube.com/watch?v=xAtBHHhnjZg",
-      "published_at": "2026-09-29T08:17:01Z",
-      "view_count": 982,
-      "views_per_hour": 339.15,
+      "video_id": "ir48mem7jEM",
+      "title": "마지막에 불이 켜지는 순간 이해됩니다",
+      "channel_title": "만들다보니",
+      "channel_url": "https://www.youtube.com/channel/UCHZPvfXg51QsViMrcPC7a5A",
+      "url": "https://www.youtube.com/watch?v=ir48mem7jEM",
+      "published_at": "2026-09-29T10:36:09Z",
+      "view_count": 1646,
+      "views_per_hour": 710.85,
       "embeddable": true,
-      "rising": true,
-      "is_short": true
-    },
-    {
-      "video_id": "FktfMWXFDcg",
-      "title": "Beautiful Handmade Pearl Necklace Making ✨ | DIY Beaded Jewelry #Shorts",
-      "channel_title": "DIY with razia ",
-      "channel_url": "https://www.youtube.com/channel/UCjqs7MRY6OX9ceeyyiDUMtQ",
-      "url": "https://www.youtube.com/watch?v=FktfMWXFDcg",
-      "published_at": "2026-09-28T09:00:01Z",
-      "view_count": 8387,
-      "views_per_hour": 320.37,
-      "embeddable": true,
-      "rising": true,
-      "is_short": true
-    },
-    {
-      "video_id": "ErHyRV4GPWM",
-      "title": "Beautiful Beaded Necklace Making 💙 | Easy DIY Handmade Jewelry #Shorts",
-      "channel_title": "DIY with razia ",
-      "channel_url": "https://www.youtube.com/channel/UCjqs7MRY6OX9ceeyyiDUMtQ",
-      "url": "https://www.youtube.com/watch?v=ErHyRV4GPWM",
-      "published_at": "2026-09-29T09:00:34Z",
-      "view_count": 576,
-      "views_per_hour": 265.48,
-      "embeddable": true,
-      "rising": true,
-      "is_short": true
-    },
-    {
-      "video_id": "_y9uU7C5i8M",
-      "title": "I still can&#39;t believe I sold all the whales! #fyp #crochet #trending #market #smallbusiness #support",
-      "channel_title": "Crochet By Bohemia",
-      "channel_url": "https://www.youtube.com/channel/UCp7FfJWG25BXPrVIIrruFRA",
-      "url": "https://www.youtube.com/watch?v=_y9uU7C5i8M",
-      "published_at": "2026-09-23T17:01:50Z",
-      "view_count": 21177,
-      "views_per_hour": 153.29,
-      "embeddable": true,
-      "rising": true,
-      "is_short": true
+      "is_short": true,
+      "rising": true
     },
     {
       "video_id": "eUfP4UnlRL8",
@@ -124,11 +85,50 @@
       "channel_url": "https://www.youtube.com/channel/UChkqUxrF8fDm6PmXDIZBG6A",
       "url": "https://www.youtube.com/watch?v=eUfP4UnlRL8",
       "published_at": "2026-09-27T11:34:01Z",
-      "view_count": 4168,
-      "views_per_hour": 87.54,
+      "view_count": 4446,
+      "views_per_hour": 90.09,
       "embeddable": true,
-      "rising": true,
-      "is_short": false
+      "is_short": false,
+      "rising": true
+    },
+    {
+      "video_id": "XTHwAXG4hzY",
+      "title": "레이스 하나 달았더니 너무 귀여워요💗 코바늘 미니가방 키링 만들기 #뜨개질 #crochet #knitting #손뜨개 #handmade",
+      "channel_title": "방울이",
+      "channel_url": "https://www.youtube.com/channel/UC7HZhG23S1xE5aExT1J0cJg",
+      "url": "https://www.youtube.com/watch?v=XTHwAXG4hzY",
+      "published_at": "2026-09-26T23:01:53Z",
+      "view_count": 3906,
+      "views_per_hour": 63.12,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "MjWK1AeC0q8",
+      "title": "뜨개질 못하는 저도 만들었어요｜방울실로 만든 보들보들 담요",
+      "channel_title": "올리뷰",
+      "channel_url": "https://www.youtube.com/channel/UCp6_ujrdPlfI11KPyjJa0aw",
+      "url": "https://www.youtube.com/watch?v=MjWK1AeC0q8",
+      "published_at": "2026-09-26T08:30:16Z",
+      "view_count": 3343,
+      "views_per_hour": 43.75,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "lOz2GvXsVS0",
+      "title": "자연광에서 가을 열매 비즈키링 만들기🍁🍂 #비즈계 #비즈키링 #비즈 #키링 #가을 #자연광 #열매 #추천 #떡상 #유링이즈",
+      "channel_title": "유링이즈",
+      "channel_url": "https://www.youtube.com/channel/UCUtmOFu8X5D--gYlp-BGrvQ",
+      "url": "https://www.youtube.com/watch?v=lOz2GvXsVS0",
+      "published_at": "2026-09-24T01:35:13Z",
+      "view_count": 3347,
+      "views_per_hour": 25.49,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
     }
   ],
   "ideas": [
