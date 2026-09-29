@@ -1,0 +1,132 @@
+{
+  "date": "2026-09-21",
+  "collected_at": "2026-09-21T09:24:38.674573+00:00",
+  "record_count": 52,
+  "item_signals": [
+    [
+      "감 키링",
+      3
+    ],
+    [
+      "비즈 키링",
+      2
+    ],
+    [
+      "감 파우치",
+      2
+    ],
+    [
+      "boho bookmark",
+      2
+    ],
+    [
+      "pearl bag",
+      2
+    ],
+    [
+      "싶었던 끈갈피",
+      1
+    ],
+    [
+      "나만의 북마크",
+      1
+    ],
+    [
+      "거북이 키링",
+      1
+    ],
+    [
+      "비즈스트랩 키링",
+      1
+    ],
+    [
+      "비즈들로 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "TL Yarn Crafts",
+      "channel_url": "https://www.youtube.com/channel/UCkO8yHEMmbvuw9Dgmuvwhsw",
+      "subscriber_count": 1030000,
+      "total_views": 47330,
+      "relevant_video_count": 1,
+      "cover_video_id": "Xys5-SabR8M"
+    },
+    {
+      "channel_title": "PreppyBracelet",
+      "channel_url": "https://www.youtube.com/channel/UC_E64hwkI8yGqj0Orilwrow",
+      "subscriber_count": 239000,
+      "total_views": 117353,
+      "relevant_video_count": 1,
+      "cover_video_id": "IS8tSJ8tviU"
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "SuoO-ORENQw",
+      "title": "카페 갈 때 이 가방 메고 갔더니 다들 어디서 샀냐고 물어봐요 #위빙가방 #텀블러가방 #핸드메이드",
+      "channel_title": "eoni_daily",
+      "channel_url": "https://www.youtube.com/channel/UCCtliHBE_kd3Oz4zQYvh-Pg",
+      "url": "https://www.youtube.com/watch?v=SuoO-ORENQw",
+      "published_at": "2026-09-20T23:02:36Z",
+      "view_count": 1138,
+      "views_per_hour": 109.77,
+      "embeddable": true,
+      "rising": true
+    },
+    {
+      "video_id": "qK9Js8Rnfc8",
+      "title": "영롱한 천사 비즈 키링 만들기 👼 핸드폰 꾸미기",
+      "channel_title": "데그르르르",
+      "channel_url": "https://www.youtube.com/channel/UCAq_1sx7Mk_6AKX-W14dIRQ",
+      "url": "https://www.youtube.com/watch?v=qK9Js8Rnfc8",
+      "published_at": "2026-09-20T11:45:46Z",
+      "view_count": 1207,
+      "views_per_hour": 55.76,
+      "embeddable": true,
+      "rising": true
+    },
+    {
+      "video_id": "Iz_UPmSq-C4",
+      "title": "Boho Bookmark✨🌿 |Black Bookmark idea🖤#shorts #shortsfeed #bookmark  #asmr",
+      "channel_title": "Vennila Draws",
+      "channel_url": "https://www.youtube.com/channel/UCmSpZEY5gZZO5o8SBYhIWUg",
+      "url": "https://www.youtube.com/watch?v=Iz_UPmSq-C4",
+      "published_at": "2026-09-17T07:17:06Z",
+      "view_count": 4710,
+      "views_per_hour": 48.0,
+      "embeddable": true,
+      "rising": true
+    },
+    {
+      "video_id": "b_gSfGeTnc0",
+      "title": "인기 많은 행운 거북이 비즈 키링 만들기 🐢🍀",
+      "channel_title": "데그르르르",
+      "channel_url": "https://www.youtube.com/channel/UCAq_1sx7Mk_6AKX-W14dIRQ",
+      "url": "https://www.youtube.com/watch?v=b_gSfGeTnc0",
+      "published_at": "2026-09-17T11:42:16Z",
+      "view_count": 1298,
+      "views_per_hour": 13.85,
+      "embeddable": true,
+      "rising": true
+    },
+    {
+      "video_id": "V30Xr2t9mxc",
+      "title": "DIY Macrame Butterfly &amp; Dreamcatcher Tutorial | Aesthetic Room Decor Ideas #handmade #bohotheme #art",
+      "channel_title": "RR creative hands studio ",
+      "channel_url": "https://www.youtube.com/channel/UClKWsYMjbC-ZHqWAKelYUkA",
+      "url": "https://www.youtube.com/watch?v=V30Xr2t9mxc",
+      "published_at": "2026-09-16T02:30:17Z",
+      "view_count": 425,
+      "views_per_hour": 3.35,
+      "embeddable": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
