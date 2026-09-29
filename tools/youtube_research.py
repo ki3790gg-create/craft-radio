@@ -13,9 +13,11 @@ class YouTubeResearchError(RuntimeError):
 class YouTubeResearch:
     endpoint = "https://www.googleapis.com/youtube/v3"
 
-    def __init__(self, api_key: str, max_results: int = 25) -> None:
+    def __init__(self, api_key: str, max_results: int = 25, region: str = "", language: str = "") -> None:
         self.api_key = api_key
         self.max_results = max_results
+        self.region = region
+        self.language = language
 
     def collect(self, search_terms: list[str], lookback_days: int) -> dict[str, Any]:
         if not self.api_key:
@@ -27,17 +29,19 @@ class YouTubeResearch:
         found: dict[str, dict[str, Any]] = {}
 
         for term in search_terms:
-            response = self._get(
-                "/search",
-                {
-                    "part": "snippet",
-                    "q": term,
-                    "type": "video",
-                    "order": "relevance",
-                    "publishedAfter": published_after,
-                    "maxResults": self.max_results,
-                },
-            )
+            params = {
+                "part": "snippet",
+                "q": term,
+                "type": "video",
+                "order": "relevance",
+                "publishedAfter": published_after,
+                "maxResults": self.max_results,
+            }
+            if self.region:
+                params["regionCode"] = self.region
+            if self.language:
+                params["relevanceLanguage"] = self.language
+            response = self._get("/search", params)
             for item in response.get("items", []):
                 video_id = item["id"].get("videoId")
                 if video_id:
@@ -62,6 +66,9 @@ class YouTubeResearch:
             record["channel_url"] = f"https://www.youtube.com/channel/{item['channel_id']}"
             record["url"] = f"https://www.youtube.com/watch?v={video_id}"
             records.append(record)
+
+        if self.region:
+            records = keep_local(records, self.region)
 
         result = analyze_records(records)
         covers = [channel["videos"][0] for channel in result["top_channels"] if channel.get("videos")]
@@ -110,19 +117,37 @@ class YouTubeResearch:
             data = self._get(
                 "/channels",
                 {
-                    "part": "statistics",
+                    "part": "statistics,snippet",
                     "id": ",".join(channel_ids[batch_start:batch_start + 50]),
                 },
             )
             for item in data.get("items", []):
                 stats = item.get("statistics", {})
                 details[item["id"]] = {
+                    "country": item.get("snippet", {}).get("country"),
                     "subscriber_count": int(stats["subscriberCount"])
                     if "subscriberCount" in stats
                     else None,
                     "video_count": int(stats.get("videoCount", 0)),
                 }
         return details
+
+
+HANGUL = re.compile(r"[가-힣]")
+MIN_LOCAL_RECORDS = 5
+
+
+def keep_local(records: list[dict[str, Any]], region: str) -> list[dict[str, Any]]:
+    """Keep videos with a Korean title or from a channel registered in `region`.
+
+    Falls back to all records if too few remain, so the weekly report is never empty.
+    """
+    local = [
+        record for record in records
+        if HANGUL.search(record.get("title", ""))
+        or record.get("channel", {}).get("country") == region
+    ]
+    return local if len(local) >= MIN_LOCAL_RECORDS else records
 
 
 def is_short(video_id: str, title: str = "") -> bool:

@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from config import ROOT, SEARCH_TERMS, SITE_DIR, Settings
+from config import ROOT, SEARCH_LANGUAGE, SEARCH_REGION, SEARCH_TERMS, SITE_DIR, Settings
 from site_builder import DEFAULT_IDEAS, publish
 from youtube_research import YouTubeResearch, analyze_records
 
@@ -82,9 +82,9 @@ def main() -> int:
     data = (
         fixture_data()
         if args.dry_run
-        else YouTubeResearch(settings.youtube_api_key, settings.max_results_per_query).collect(
-            SEARCH_TERMS, settings.lookback_days
-        )
+        else YouTubeResearch(
+            settings.youtube_api_key, settings.max_results_per_query, SEARCH_REGION, SEARCH_LANGUAGE
+        ).collect(SEARCH_TERMS, settings.lookback_days)
     )
     markdown = report_markdown(data)
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")

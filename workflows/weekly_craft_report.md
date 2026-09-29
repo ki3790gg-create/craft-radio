@@ -13,7 +13,8 @@ Every Monday at 08:00 KST, collect YouTube signals for one-person craft business
 
 ## Collection scope
 
-- Search terms: Korean and English terms for cord crafts, bead accessories, knitting goods, and handmade selling (`tools/config.py` → `SEARCH_TERMS`).
+- Korea-focused (since 2026-09-29): Korean search terms only for cord crafts, bead accessories, knitting goods, macrame, and handmade selling (`tools/config.py` → `SEARCH_TERMS`), searched with `regionCode=KR` and `relevanceLanguage=ko`.
+- After collection, `keep_local()` keeps only videos with a Korean title or from a channel registered in Korea (channel `country`, fetched in the same API call — no extra quota). If fewer than 5 remain, all videos are kept so the report is never empty.
 - Review window: the previous 7 days.
 - Established channels: rank by subscriber count, then by relevant video views.
 - High-interest items: identify repeated product words and formats among the most-viewed videos.

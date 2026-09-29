@@ -20,11 +20,15 @@ class Settings:
 RETENTION_DAYS = 28
 MAX_REPORTS = 4
 
+# Korea-focused: Korean search terms, searched with region KR / language ko,
+# and results kept only if the title is Korean or the channel is registered in Korea.
 SEARCH_TERMS = [
     "끈갈피 만들기",
     "비즈 소품 만들기",
     "뜨개 소품 만들기",
-    "macrame bookmark handmade",
-    "beaded accessories handmade",
-    "knitting small business products",
+    "마크라메 만들기",
+    "비즈 키링 만들기",
+    "핸드메이드 소품 판매",
 ]
+SEARCH_REGION = "KR"
+SEARCH_LANGUAGE = "ko"
