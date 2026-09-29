@@ -1,0 +1,66 @@
+name: Weekly craft report
+
+on:
+  schedule:
+    # Sunday 23:00 UTC = Monday 08:00 KST
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: weekly-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Collect YouTube data and rebuild site
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_MAX_RESULTS_PER_QUERY: "10"
+        run: python tools/run_weekly_report.py
+      - name: Save updated reports
+        run: |
+          git config user.name "weekly-report-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site
+          git diff --cached --quiet || git commit -m "Weekly report $(date -u +%F)"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  # Redeploy without collecting when site files are uploaded by hand.
+  build-only:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: [report, build-only]
+    if: always() && (needs.report.result == 'success' || needs.build-only.result == 'success')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
