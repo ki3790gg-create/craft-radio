@@ -21,9 +21,16 @@ Every Monday at 08:00 KST, collect YouTube signals for one-person craft business
 
 ## Website
 
-- Layout: sky-blue background, white cards, navy text. Music-player concept — spinning LP + player (NOW PLAYING), playlist of the 5 recommended videos, keyword "search bar", channel polaroids, idea notes.
-- Week tabs at the top: one per stored week, newest first.
-- Videos play inside the page (youtube-nocookie embed, loaded only when clicked).
+- Layout: sky-blue background, white cards, navy text; footer text white.
+- Left column (top → bottom): week switcher paperclips → "Craft Radio" title → clear white LP with the current thumbnail showing through → NOW PLAYING title (never wider than the LP) → frameless ⏮ ▶ ⏭ icons (all the same size, flash white when pressed) → "WEEKLY CRAFT REPORT / UPDATED" stamp, right-aligned to the title's right end.
+- Right column: "Playlist!" with a two-line caption beside it, then the 5 recommended videos as a zigzag pile of tilted polaroids with green washi tape (no numbers). Earlier photos sit on top so overlaps never hide a caption.
+- Below: keyword "search bar", channel polaroids, idea notes (ruled lines).
+- Week switcher: one white paperclip per stored week, newest first, scattered angles (`CLIP_ANGLES`, kept apart modulo 180° because a clip turned upside down looks the same), all on one line; the selected week is navy; the date shows only as a hover tooltip.
+- Fonts: big titles in Dancing Script; everything else in 오뮤 다예쁨체 (`omyu_pretty`, from jsDelivr, scaled 115%).
+- Spacing gotcha: `.wrap` sets padding, so `main`/`footer` padding must be written as `main.wrap` / `footer.wrap` or it is silently ignored.
+- Videos play in a popup (youtube-nocookie embed, loaded only when opened; closing stops playback). Shorts open in a tall 9:16 popup, other videos in 16:9.
+- Shorts detection: `is_short()` in `tools/youtube_research.py` checks `youtube.com/shorts/<id>` (200 = Short, redirect = regular). No API quota. Falls back to "#short" in the title.
+- YouTube `hqdefault` thumbnails contain black letterbox bars; the LP zooms the image past them (more for Shorts). The search API also returns HTML-encoded titles (`&#39;`); `site_builder.py` decodes them.
 - Videos whose owner disabled embedding (`embeddable: false` from the YouTube API) show the thumbnail and a "유튜브에서 보기" button instead.
 
 ## Retention
@@ -40,6 +47,13 @@ Every Monday at 08:00 KST, collect YouTube signals for one-person craft business
 - Keep raw API responses and generated Markdown in `.tmp/` only.
 - Do not claim subscriber counts when the channel hides them; label them as "비공개".
 - YouTube quota: about 600 of the free 10,000 daily units per run. No paid usage.
+
+## Where things live
+
+- Repository: https://github.com/ki3790gg-create/craft-radio (the source of truth — the bot commits new weekly reports there, so the local `site/` folder falls behind; that is expected)
+- Live site: https://ki3790gg-create.github.io/craft-radio/
+- This PC has no git. To change files, upload them on GitHub's web page ("Add file → Upload files").
+- GitHub's drag-and-drop upload silently skips names starting with a dot (`.github/`, `.gitignore`). Create those with "Add file → Create new file", or open `https://github.com/<repo>/new/main?filename=<path>&value=<url-encoded content>` to prefill the editor.
 
 ## Troubleshooting
 

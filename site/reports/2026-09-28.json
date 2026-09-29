@@ -51,7 +51,8 @@
       "subscriber_count": 1490000,
       "total_views": 108808,
       "relevant_video_count": 1,
-      "cover_video_id": "6AdFFI2_IXA"
+      "cover_video_id": "6AdFFI2_IXA",
+      "cover_is_short": true
     },
     {
       "channel_title": "くまみき/Kumamiki",
@@ -59,7 +60,8 @@
       "subscriber_count": 597000,
       "total_views": 72660,
       "relevant_video_count": 1,
-      "cover_video_id": "Oi84V8U2w0Y"
+      "cover_video_id": "Oi84V8U2w0Y",
+      "cover_is_short": false
     }
   ],
   "videos": [
@@ -73,7 +75,8 @@
       "view_count": 739,
       "views_per_hour": 739.0,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "XTHwAXG4hzY",
@@ -85,7 +88,8 @@
       "view_count": 2561,
       "views_per_hour": 73.87,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "lOz2GvXsVS0",
@@ -97,7 +101,8 @@
       "view_count": 3250,
       "views_per_hour": 31.22,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "O-neRqeP3Ks",
@@ -109,7 +114,8 @@
       "view_count": 2648,
       "views_per_hour": 25.74,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "YJJvYnpKZMU",
@@ -121,7 +127,8 @@
       "view_count": 1204,
       "views_per_hour": 7.74,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     }
   ],
   "ideas": [

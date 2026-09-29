@@ -63,7 +63,12 @@ class YouTubeResearch:
             record["url"] = f"https://www.youtube.com/watch?v={video_id}"
             records.append(record)
 
-        return analyze_records(records)
+        result = analyze_records(records)
+        covers = [channel["videos"][0] for channel in result["top_channels"] if channel.get("videos")]
+        for item in result["popular_videos"] + covers:
+            if "is_short" not in item:
+                item["is_short"] = is_short(item["video_id"], item.get("title", ""))
+        return result
 
     def _get(self, path: str, params: dict[str, Any]) -> dict[str, Any]:
         response = requests.get(
@@ -118,6 +123,19 @@ class YouTubeResearch:
                     "video_count": int(stats.get("videoCount", 0)),
                 }
         return details
+
+
+def is_short(video_id: str, title: str = "") -> bool:
+    """Shorts answer /shorts/<id> directly; regular videos redirect to /watch. No API quota used."""
+    try:
+        response = requests.head(
+            f"https://www.youtube.com/shorts/{video_id}", allow_redirects=False, timeout=15
+        )
+        if response.status_code in (200, 301, 302, 303, 307, 308):
+            return response.status_code == 200
+    except requests.RequestException:
+        pass
+    return "#short" in title.lower()
 
 
 def analyze_records(records: list[dict[str, Any]]) -> dict[str, Any]:

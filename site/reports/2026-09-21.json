@@ -51,7 +51,8 @@
       "subscriber_count": 1030000,
       "total_views": 47330,
       "relevant_video_count": 1,
-      "cover_video_id": "Xys5-SabR8M"
+      "cover_video_id": "Xys5-SabR8M",
+      "cover_is_short": false
     },
     {
       "channel_title": "PreppyBracelet",
@@ -59,7 +60,8 @@
       "subscriber_count": 239000,
       "total_views": 117353,
       "relevant_video_count": 1,
-      "cover_video_id": "IS8tSJ8tviU"
+      "cover_video_id": "IS8tSJ8tviU",
+      "cover_is_short": true
     }
   ],
   "videos": [
@@ -73,7 +75,8 @@
       "view_count": 1138,
       "views_per_hour": 109.77,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "qK9Js8Rnfc8",
@@ -85,7 +88,8 @@
       "view_count": 1207,
       "views_per_hour": 55.76,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "Iz_UPmSq-C4",
@@ -97,7 +101,8 @@
       "view_count": 4710,
       "views_per_hour": 48.0,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "b_gSfGeTnc0",
@@ -109,7 +114,8 @@
       "view_count": 1298,
       "views_per_hour": 13.85,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "V30Xr2t9mxc",
@@ -121,7 +127,8 @@
       "view_count": 425,
       "views_per_hour": 3.35,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     }
   ],
   "ideas": [

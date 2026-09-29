@@ -51,7 +51,8 @@
       "subscriber_count": 376000,
       "total_views": 22168,
       "relevant_video_count": 1,
-      "cover_video_id": "1HmKzM9OjzA"
+      "cover_video_id": "1HmKzM9OjzA",
+      "cover_is_short": false
     },
     {
       "channel_title": "CJ Design",
@@ -59,7 +60,8 @@
       "subscriber_count": 330000,
       "total_views": 3510,
       "relevant_video_count": 1,
-      "cover_video_id": "WzW72SiZlOU"
+      "cover_video_id": "WzW72SiZlOU",
+      "cover_is_short": false
     }
   ],
   "videos": [
@@ -73,7 +75,8 @@
       "view_count": 982,
       "views_per_hour": 339.15,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "FktfMWXFDcg",
@@ -85,7 +88,8 @@
       "view_count": 8387,
       "views_per_hour": 320.37,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "ErHyRV4GPWM",
@@ -97,7 +101,8 @@
       "view_count": 576,
       "views_per_hour": 265.48,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "_y9uU7C5i8M",
@@ -109,7 +114,8 @@
       "view_count": 21177,
       "views_per_hour": 153.29,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": true
     },
     {
       "video_id": "eUfP4UnlRL8",
@@ -121,7 +127,8 @@
       "view_count": 4168,
       "views_per_hour": 87.54,
       "embeddable": true,
-      "rising": true
+      "rising": true,
+      "is_short": false
     }
   ],
   "ideas": [
