@@ -219,7 +219,7 @@ def render_week(report: dict[str, Any], active: bool) -> str:
   <div class="stage">
     <div class="deck">
       <nav class="dots" aria-label="주차 선택">{{{{TABS}}}}</nav>
-      <h1 class="brand">Craft Radio</h1>
+      <h1 class="brand">Bubble House</h1>
       {render_record(videos[0] if videos else None)}
       <div class="np-block">
         <p class="now-playing"><span>NOW PLAYING</span> <em class="np-title">{escape(videos[0]['title']) if videos else '이번 주 영상이 없어요'}</em></p>
@@ -289,10 +289,136 @@ def render_site(reports: list[dict[str, Any]]) -> str:
         .replace("{{UPDATED}}", updated).replace("{{FOOTER}}", escape(footer))
 
 
+GLASS_W, GLASS_H = 1200, 2400  # one big piece, scaled to the page width and repeated downwards
+
+# Everything stays inside y = 150..2250 (blur included) so the piece repeats downwards with no seam.
+# Reflections like those on a clear glass ball: (curve, band width). Each becomes a broad soft
+# white band with a pastel iridescent film beside it. (No hairline edges: the user asked for none.)
+GLASS_REFLECTIONS = [
+    ("M-80 390C260 200 760 180 1280 340", 110),
+    ("M1000 480C900 780 920 1060 1060 1300", 70),
+    ("M-60 1180C300 980 640 1000 980 1160", 90),
+    ("M180 1480C130 1720 160 1920 280 2080", 60),
+    ("M380 1980C700 1830 1000 1850 1300 1960", 100),
+]
+# Window glare on the tabletop: straight diagonal soft bands (path, width, opacity).
+GLASS_GLARES = [
+    ("M780 260L300 1060", 150, .20),
+    ("M1150 880L720 1640", 60, .30),
+    ("M620 1500L300 2080", 110, .18),
+]
+# Short, soft bright spots where the glass catches the light: (x, y, rx, ry, angle, opacity).
+GLASS_SPECULARS = [
+    (840, 330, 70, 18, -18, .5), (1040, 760, 50, 14, 70, .45), (260, 1110, 64, 16, -12, .45),
+    (760, 1650, 56, 14, -58, .42), (430, 1960, 76, 18, -10, .45), (150, 640, 44, 12, -60, .38),
+]
+GLASS_GLINTS = [(820, 250, 9), (1068, 1240, 7), (300, 1052, 6), (296, 2080, 8), (1180, 1935, 7), (560, 548, 5)]
+
+
+def glass_svg() -> str:
+    """Clear-glass texture: soft curved reflections, iridescent film, window glare,
+    soft specular spots and a few glints.
+
+    Transparent everywhere else, so it sits on top of the sky-blue page colour.
+    """
+    bands = []
+    for d, w in GLASS_REFLECTIONS:
+        bands.append(
+            f'<path d="{d}" stroke="#fff" stroke-width="{w}" opacity=".30" filter="url(#soft)"/>'
+            f'<path d="{d}" transform="translate(0 {w * .42:.0f})" stroke="url(#iris)" stroke-width="{w * .6:.0f}" opacity=".42" filter="url(#mid)"/>'
+        )
+    glares = "".join(
+        f'<path d="{d}" stroke="#fff" stroke-width="{w}" opacity="{o}" filter="url(#soft)"/>' for d, w, o in GLASS_GLARES
+    )
+    speculars = "".join(
+        f'<ellipse cx="{x}" cy="{y}" rx="{rx}" ry="{ry}" transform="rotate({a} {x} {y})" fill="#fff" opacity="{o}" filter="url(#spec)"/>'
+        for x, y, rx, ry, a, o in GLASS_SPECULARS
+    )
+    glints = "".join(
+        f'<g transform="translate({x} {y})"><circle r="{s * .45:.1f}" fill="url(#glint)"/>'
+        f'<path d="M0 {-s}L{s * .09:.1f} 0 0 {s} {-s * .09:.1f} 0ZM{-s} 0 0 {s * .09:.1f} {s} 0 0 {-s * .09:.1f}Z" fill="#fff"/></g>'
+        for x, y, s in GLASS_GLINTS
+    )
+    # Blur regions cover the whole canvas (userSpaceOnUse): a region sized to each shape's own
+    # box clips wide blurs into hard straight edges.
+    region = f'filterUnits="userSpaceOnUse" x="-300" y="-300" width="{GLASS_W + 600}" height="{GLASS_H + 600}"'
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{GLASS_W}" height="{GLASS_H}" viewBox="0 0 {GLASS_W} {GLASS_H}">
+<defs>
+  <filter id="soft" {region}><feGaussianBlur stdDeviation="26"/></filter>
+  <filter id="mid" {region}><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="spec" {region}><feGaussianBlur stdDeviation="9"/></filter>
+  <!-- thin-film iridescence: the faint pink / lilac / mint / butter sheen on clear glass -->
+  <linearGradient id="iris" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="{GLASS_W}" y2="{GLASS_H // 3}" spreadMethod="reflect">
+    <stop offset="0" stop-color="#ffd6ec"/>
+    <stop offset=".3" stop-color="#e2d6ff"/>
+    <stop offset=".55" stop-color="#c7f4ec"/>
+    <stop offset=".8" stop-color="#fff3c6"/>
+    <stop offset="1" stop-color="#ffd6ec"/>
+  </linearGradient>
+  <radialGradient id="glint"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<g fill="none" stroke-linecap="round">{glares}{"".join(bands)}</g>
+{speculars}
+{glints}
+</svg>"""
+
+
+# Light the clear LP throws onto the table: wobbly concentric rings of refracted light.
+# (radius, ring width, opacity, x-offset) - offsets make the rings swirl slightly, like a glass bowl's.
+LP_LIGHT_RINGS = [
+    (52, 10, .75, 6), (88, 7, .62, 3), (104, 14, .36, 9), (141, 8, .68, 4), (178, 12, .58, 8),
+]
+
+
+def lp_light_svg() -> str:
+    """The clear LP's shadow: a faint blue disc with rippling arcs of light and a bright focus.
+
+    The rings are strongest on the side facing the light and fade out on the far side,
+    so they read as arcs of refracted light rather than tree rings.
+    """
+    rings = "".join(
+        # each ring: a wide soft glow plus a narrower brighter core
+        f'<circle cx="{200 + dx}" cy="200" r="{r}" stroke-width="{w * 2.2:.0f}" opacity="{o * .5:.2f}"/>'
+        f'<circle cx="{200 + dx}" cy="200" r="{r}" stroke-width="{w * .55:.1f}" opacity="{min(o * 1.2, 1):.2f}"/>'
+        for r, w, o, dx in LP_LIGHT_RINGS
+    )
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+<defs>
+  <radialGradient id="shade" r=".5">
+    <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
+    <stop offset=".35" stop-color="#3060b0" stop-opacity=".08"/>
+    <stop offset=".85" stop-color="#3060b0" stop-opacity=".26"/>
+    <stop offset=".97" stop-color="#3060b0" stop-opacity=".1"/>
+    <stop offset="1" stop-color="#3060b0" stop-opacity="0"/>
+  </radialGradient>
+  <!-- ripple: bend the rings with a little noise, then soften so they read as light, not lines -->
+  <filter id="ripple" filterUnits="userSpaceOnUse" x="-20" y="-20" width="440" height="440">
+    <feTurbulence type="fractalNoise" baseFrequency=".009" numOctaves="2" seed="4"/>
+    <feDisplacementMap in="SourceGraphic" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+    <feGaussianBlur stdDeviation="2.2"/>
+  </filter>
+  <!-- light side (top left) strong, far side fades away -->
+  <linearGradient id="side" x1=".15" y1=".1" x2=".85" y2=".95">
+    <stop offset="0" stop-color="#fff"/>
+    <stop offset=".55" stop-color="#fff" stop-opacity=".7"/>
+    <stop offset="1" stop-color="#fff" stop-opacity=".2"/>
+  </linearGradient>
+  <mask id="fade" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="400"><rect width="400" height="400" fill="url(#side)"/></mask>
+  <filter id="glow" filterUnits="userSpaceOnUse" x="-20" y="-20" width="440" height="440"><feGaussianBlur stdDeviation="10"/></filter>
+  <filter id="edge" filterUnits="userSpaceOnUse" x="-20" y="-20" width="440" height="440"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<circle cx="200" cy="200" r="197" fill="url(#shade)" filter="url(#edge)"/>
+<g mask="url(#fade)"><g fill="none" stroke="#fff" filter="url(#ripple)">{rings}</g></g>
+<ellipse cx="176" cy="170" rx="46" ry="26" transform="rotate(-24 176 170)" fill="#fff" opacity=".8" filter="url(#glow)"/>
+</svg>"""
+
+
 def build_site(site_dir: Path = SITE_DIR) -> Path:
     site_dir.mkdir(parents=True, exist_ok=True)
     index = site_dir / "index.html"
     index.write_text(render_site(load_reports(site_dir)), encoding="utf-8")
+    (site_dir / "glass.svg").write_text(glass_svg(), encoding="utf-8")
+    (site_dir / "lp-light.svg").write_text(lp_light_svg(), encoding="utf-8")
     (site_dir / ".nojekyll").write_text("", encoding="utf-8")
     return index
 
@@ -309,7 +435,7 @@ PAGE = r"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Craft Radio · 주간 공예 리포트</title>
+<title>Bubble House · 주간 공예 리포트</title>
 <meta name="description" content="매주 월요일 업데이트되는 매듭·비즈·뜨개 공예 유튜브 트렌드 리포트">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -325,8 +451,39 @@ PAGE = r"""<!doctype html>
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--sky);color:var(--ink);
+body{margin:0;color:var(--ink);
   font-family:"omyu_pretty",system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+
+/* ---- glass tabletop ----
+   glass.svg (generated by glass_svg()) adds clear-glass reflections - soft curved bands,
+   iridescent film and glints, like a glass ball - over
+   soft window light and long reflections. The surface scrolls with the page, like a photo of a table.
+   Objects get two shadows: a crisp one on the glass and a faint, offset, blurred one on the
+   floor seen through the glass - the tell-tale look of a glass table. */
+html{background:var(--sky)}
+body{position:relative;min-height:100vh}
+:root{
+  /* sunlit shadows are cool blue, not grey, and all fall the same way (light from the top left) */
+  --shade:48,96,176;
+  --on-glass:0 1px 2px rgba(var(--shade),.3),0 3px 8px rgba(var(--shade),.24),8px 12px 16px -5px rgba(var(--shade),.36);
+  --through-glass:18px 26px 22px rgba(var(--shade),.22);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    /* glass reflections, iridescence, window glare, specular spots, glints (seamless when repeated) */
+    url("glass.svg"),
+    /* window light falling in from the top left; fades out fully inside its box, so no edge */
+    radial-gradient(ellipse 70% 45% at 8% -8%,rgba(255,255,255,.62),rgba(255,255,255,0) 70%),
+    /* depth: the glass gets a touch deeper and bluer further from the light */
+    radial-gradient(ellipse 90% 70% at 100% 110%,rgba(95,138,198,.28),transparent 70%),
+    /* very fine surface grain so it reads as a material, not a flat colour */
+    var(--grain),
+    var(--sky);
+  background-size:max(100%,900px) auto,100% 1400px,100% 100%,180px 180px,auto;
+  background-position:center top,0 0,0 0,0 0,0 0;
+  background-repeat:repeat-y,no-repeat,no-repeat,repeat,repeat;
+  background-blend-mode:normal,normal,normal,soft-light,normal}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
@@ -335,19 +492,22 @@ a{color:inherit}
 main.wrap{padding-top:64px}
 /* site title sits centred above the LP */
 .brand{margin:0 0 36px;font:700 46px/1.1 "Dancing Script",cursive;color:var(--navy);text-align:center}
+/* bold script titles sit on the glass too: a faint blue shadow falling the same way as everything else */
+.brand,.display,.search-label{text-shadow:1px 2px 1px rgba(var(--shade),.18),3px 5px 6px rgba(var(--shade),.24)}
 /* week switcher: white paperclips at mixed angles under the LP; the selected week turns navy.
    Clip centres ~132px apart, well wider than the ⏮ ▶ ⏭ icons (72px). */
 .dots{display:flex;justify-content:center;align-items:center;gap:120px;height:52px;margin:0 0 80px}
 .dot{display:block;transform:rotate(var(--r));transition:transform .15s}
 .dot svg{display:block;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;
-  filter:drop-shadow(0 2px 3px rgba(20,40,72,.25));transition:stroke .15s}
+  filter:drop-shadow(0 1.5px 2px rgba(var(--shade),.45)) drop-shadow(5px 7px 4px rgba(var(--shade),.3));transition:stroke .15s}
 .dot:hover{transform:rotate(var(--r)) scale(1.15)}
 .dot:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:4px}
 .dot[aria-current] svg,.dot:active svg{stroke:var(--navy)}
 .stamp{display:flex;align-items:center;gap:10px;text-align:right;font:700 11px/1.3 "League Spartan",sans-serif;
   letter-spacing:.06em;color:var(--navy)}
 .stamp .disc{flex:none;width:44px;height:44px;border-radius:50%;border:3px solid var(--navy);
-  background:repeating-radial-gradient(circle,#1b1b22 0 2px,#2a2a33 2px 3px);position:relative}
+  background:repeating-radial-gradient(circle,#1b1b22 0 2px,#2a2a33 2px 3px);position:relative;
+  box-shadow:0 1px 2px rgba(var(--shade),.3),3px 4px 6px rgba(var(--shade),.28)}
 .stamp .disc::after{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--sky-soft)}
 
 /* stage */
@@ -356,27 +516,34 @@ main.wrap{padding-top:64px}
 
 /* clear vinyl: thumbnail shows through a tinted, grooved disc */
 .record{position:relative;width:min(var(--disc),100%);aspect-ratio:1;border-radius:50%;
-  filter:drop-shadow(0 22px 40px rgba(20,40,72,.28))}
-.vinyl{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#fff;
+  filter:drop-shadow(0 2px 4px rgba(var(--shade),.3))}
+/* the clear LP throws light, not just shadow: rippling rings of refracted light (lp-light.svg,
+   generated by lp_light_svg()) with a bright focus, offset towards the bottom right */
+.record::before{content:"";position:absolute;inset:0;z-index:-1;transform:translate(5%,6%);
+  background:url("lp-light.svg") center/100% 100% no-repeat}
+/* the disc is milky but see-through, so its own light pattern on the table shows through it */
+.vinyl{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.24);
   animation:spin 12s linear infinite;animation-play-state:paused}
 .week.playing .vinyl{animation-play-state:running}
 /* hqdefault thumbnails carry black letterbox bars; zoom past them (Shorts need more) */
 .record{--zoom:1.34}
 .record.short{--zoom:2.4}
 .disc-art,.label-art{transform:scale(var(--zoom))}
-.disc-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;filter:saturate(1.1) blur(.5px)}
+.disc-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;filter:saturate(1.1) blur(.5px)}
+/* clear glass disc: faint grooves, a bright polished rim, and a slightly darker far edge where light bends */
 .grooves{position:absolute;inset:0;border-radius:50%;
   background:
-    radial-gradient(circle closest-side,transparent 0 33%,rgba(255,255,255,.3) 33.5% 100%),
-    repeating-radial-gradient(circle,rgba(255,255,255,.22) 0 1px,transparent 1px 3px,rgba(31,56,100,.07) 3px 4px);
-  box-shadow:inset 0 0 0 10px rgba(255,255,255,.45),inset 0 0 0 11px rgba(31,56,100,.12),inset 0 0 60px rgba(255,255,255,.35)}
+    radial-gradient(circle closest-side,transparent 0 33%,rgba(255,255,255,.12) 33.5% 100%),
+    repeating-radial-gradient(circle,rgba(255,255,255,.26) 0 1px,transparent 1px 3px,rgba(31,56,100,.05) 3px 4px);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.9),inset 0 0 0 10px rgba(255,255,255,.22),
+    inset 0 0 28px rgba(255,255,255,.55),inset -12px -16px 44px rgba(var(--shade),.2)}
 .label{position:absolute;inset:33%;border-radius:50%;overflow:hidden;border:6px solid #fff;background:#fff;
   box-shadow:0 0 0 1px rgba(31,56,100,.15)}
 .label-art{width:100%;height:100%;object-fit:cover}
 .sheen{position:absolute;inset:0;border-radius:50%;pointer-events:none;
   background:
-    conic-gradient(from 20deg,transparent 0 8%,rgba(255,255,255,.38) 12%,transparent 18% 52%,rgba(255,255,255,.3) 58%,transparent 64%),
-    radial-gradient(circle at 30% 25%,rgba(255,255,255,.35),transparent 45%);
+    conic-gradient(from 20deg,transparent 0 8%,rgba(255,255,255,.55) 12%,transparent 18% 52%,rgba(255,255,255,.42) 58%,transparent 64%),
+    radial-gradient(circle at 30% 25%,rgba(255,255,255,.45),transparent 45%);
   -webkit-mask:radial-gradient(circle closest-side,transparent 0 33%,#000 33.5%);mask:radial-gradient(circle closest-side,transparent 0 33%,#000 33.5%)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .disc-play{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px;border-radius:50%}
@@ -398,7 +565,14 @@ main.wrap{padding-top:64px}
 .ctl:active{transform:scale(.94)}
 .ctl:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 .ctl svg{width:30px;height:30px;fill:var(--navy);stroke:var(--navy);stroke-width:2;stroke-linejoin:round;transition:fill .15s,stroke .15s}
-.controls .ctl:active svg,.controls .ctl.pressed svg{fill:#fff;stroke:#fff}
+/* 3D player icons (still frameless): lit navy at the top, deep navy below, a thin darker
+   "thickness" under the shape and a blue shadow on the glass. Pressed: sinks in and turns white. */
+.controls .ctl svg{fill:url(#btn3d);stroke:url(#btn3d);
+  filter:drop-shadow(0 1.5px 0 #0f1f3a) drop-shadow(0 1px 0 #0f1f3a) drop-shadow(3px 5px 5px rgba(var(--shade),.4))}
+.controls .ctl:hover{transform:translateY(-2px) scale(1.08)}
+.controls .ctl:active,.controls .ctl.pressed{transform:translateY(2px) scale(.96)}
+.controls .ctl:active svg,.controls .ctl.pressed svg{fill:#fff;stroke:#fff;
+  filter:drop-shadow(0 .5px 0 #c9d8ee) drop-shadow(1px 2px 2px rgba(var(--shade),.35))}
 
 /* popup player */
 .modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:20px;
@@ -433,16 +607,26 @@ body.modal-open{overflow:hidden}
 .playlist-head{display:flex;align-items:center;gap:18px;margin-bottom:40px}
 .playlist-head .sub{margin:6px 0 0;text-align:left;line-height:1.45}
 /* polaroid pile: zigzag, each photo overlaps the corner of the previous one */
-.snaps{--w:54%;--lift:-118px;max-width:560px;list-style:none;margin:10px 0 0;padding:0 0 10px}
+/* Shadows live on a layer under every photo, so a photo never casts its shadow onto another one:
+   each item's ::before draws only the shadow (z 0), the photos themselves sit above (z 1..5). */
+.snaps{--w:54%;--lift:-118px;position:relative;z-index:0;max-width:560px;list-style:none;margin:10px 0 0;padding:0 0 10px}
 /* 4% is left free so the tilted corners never poke past the column edge */
-.snap-item{position:relative;z-index:var(--z);width:var(--w);margin-left:calc((96% - var(--w)) * var(--x) + 2%)}
+.snap-item{position:relative;width:var(--w);margin-left:calc((96% - var(--w)) * var(--x) + 2%)}
 .snap-item+.snap-item{margin-top:var(--lift)}
-.snap-item:hover,.snap-item:focus-within{z-index:10}
-.snap{display:block;width:100%;text-align:left;background:var(--paper);color:var(--navy);padding:10px 10px 14px;border-radius:3px;
-  box-shadow:0 12px 26px rgba(20,40,72,.26);transform:rotate(var(--r));transition:transform .2s,box-shadow .2s}
-.snap:hover,.snap:focus-visible{transform:rotate(0) translateY(-6px) scale(1.04);box-shadow:0 20px 38px rgba(20,40,72,.32)}
+.snap-item::before{content:"";position:absolute;inset:0;z-index:0;border-radius:3px;pointer-events:none;
+  box-shadow:var(--on-glass),var(--through-glass);transform:rotate(var(--r));transition:transform .2s,box-shadow .2s}
+/* each photo keeps only a small, soft shadow of its own, just enough to show where it overlaps
+   the one below; the long dark shadows stay on the layer underneath */
+.snap{position:relative;z-index:var(--z);display:block;width:100%;text-align:left;background:var(--paper);color:var(--navy);
+  padding:10px 10px 14px;border-radius:3px;transform:rotate(var(--r));transition:transform .2s;
+  box-shadow:0 1px 2px rgba(var(--shade),.2),2px 4px 8px rgba(var(--shade),.16)}
+.snap-item:hover .snap,.snap-item:focus-within .snap{z-index:10}
+/* picked up off the glass: the photo lifts, its shadow softens and drifts further away */
+.snap:hover,.snap:focus-visible{transform:rotate(0) translateY(-6px) scale(1.04)}
+.snap-item:hover::before,.snap-item:focus-within::before{transform:rotate(0) translateY(-6px) scale(1.04);
+  box-shadow:0 4px 10px rgba(var(--shade),.2),14px 20px 26px -6px rgba(var(--shade),.36),26px 36px 32px rgba(var(--shade),.16)}
 .snap:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
-.snap[aria-pressed="true"]{box-shadow:0 0 0 3px var(--navy),0 12px 26px rgba(20,40,72,.26)}
+.snap[aria-pressed="true"]{box-shadow:0 0 0 3px var(--navy),2px 4px 8px rgba(var(--shade),.16)}
 /* translucent green washi tape */
 .tape{position:absolute;top:-12px;left:50%;z-index:1;width:78px;height:26px;margin-left:-39px;transform:rotate(calc(var(--r) * -1.4));
   background:rgba(143,196,150,.72);box-shadow:0 2px 4px rgba(20,40,72,.12)}
@@ -460,7 +644,7 @@ body.modal-open{overflow:hidden}
 .badge{display:inline-block;margin-left:4px;background:var(--accent);color:var(--ink);font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px}
 
 /* keywords pill */
-.search-pill{background:var(--paper);border-radius:36px;padding:14px 18px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:10px 0 44px;box-shadow:0 10px 24px rgba(20,40,72,.15)}
+.search-pill{background:var(--paper);border-radius:36px;padding:14px 18px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:10px 0 44px;box-shadow:var(--on-glass),var(--through-glass)}
 .search-inner{display:flex;align-items:center;gap:10px;background:var(--sky-soft);border-radius:999px;padding:10px 22px 10px 16px}
 .search-inner svg{width:22px;height:22px;fill:none;stroke:var(--navy);stroke-width:2.6;stroke-linecap:round}
 .search-label{font:700 24px/1 "Dancing Script",cursive;color:var(--navy)}
@@ -473,7 +657,7 @@ body.modal-open{overflow:hidden}
 .lower{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;padding-bottom:40px}
 .polaroids{display:flex;gap:26px;flex-wrap:wrap;padding-top:6px}
 .polaroid{width:220px;background:var(--paper);padding:12px 12px 16px;border-radius:3px;text-decoration:none;
-  box-shadow:0 14px 28px rgba(20,40,72,.28);transform:rotate(var(--tilt));transition:transform .2s}
+  box-shadow:var(--on-glass),var(--through-glass);transform:rotate(var(--tilt));transition:transform .2s}
 .polaroid:hover{transform:rotate(0) scale(1.03)}
 .photo{display:block;aspect-ratio:1;background:var(--sky-deep);overflow:hidden}
 /* square crop past the thumbnail's black bars (Shorts need more) */
@@ -483,14 +667,15 @@ body.modal-open{overflow:hidden}
 .caption-sub{display:block;font-size:12px;color:var(--muted)}
 .notes{list-style:none;counter-reset:n;margin:6px 0 0;padding:0;display:grid;gap:14px}
 .notes li{counter-increment:n;position:relative;background:var(--paper);padding:14px 16px 14px 56px;border-radius:4px;
-  box-shadow:0 8px 18px rgba(20,40,72,.15);
+  box-shadow:var(--on-glass),var(--through-glass);
   font-size:15px;line-height:28px}
 .notes li::before{content:counter(n,decimal-leading-zero);position:absolute;left:14px;top:14px;font:800 20px/28px "League Spartan",sans-serif;color:var(--navy)}
 /* ruled lines sit exactly inside the text box, one under each 28px text line */
 .notes li::after{content:"";position:absolute;inset:14px 16px 14px 56px;pointer-events:none;
   background:repeating-linear-gradient(transparent 0 27px,#dbe5f3 27px 28px)}
 
-footer.wrap{padding-top:40px;padding-bottom:48px;font-size:13px;color:#fff}
+footer.wrap{padding-top:40px;padding-bottom:48px;font-size:13px;color:#fff;
+  text-shadow:0 1px 2px rgba(31,56,100,.45),0 0 8px rgba(31,56,100,.25)}
 .empty-site{padding:80px 0;text-align:center;font-size:18px}
 
 @media (max-width:900px){
@@ -517,6 +702,11 @@ footer.wrap{padding-top:40px;padding-bottom:48px;font-size:13px;color:#fff}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="btn3d" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#5474ad"/><stop offset=".45" stop-color="#2a4a82"/><stop offset="1" stop-color="#132646"/>
+  </linearGradient>
+</defs></svg>
 <main class="wrap">{{WEEKS}}</main>
 <footer class="wrap">{{FOOTER}}</footer>
 <div class="modal" id="player" role="dialog" aria-modal="true" aria-label="영상 재생" hidden>

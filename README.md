@@ -1,4 +1,4 @@
-# Craft Radio — Weekly Craft Business Report
+# Bubble House — Weekly Craft Business Report
 
 A small Python automation that researches YouTube content for a one-person craft business and publishes a weekly report website (GitHub Pages). Only the latest 4 weeks are kept; videos play inside the page.
 
