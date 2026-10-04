@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-05",
+  "collected_at": "2026-10-04T23:02:17.475329+00:00",
+  "record_count": 32,
+  "item_signals": [
+    [
+      "튤립 파우치",
+      3
+    ],
+    [
+      "비즈 키링",
+      3
+    ],
+    [
+      "투어 끈갈피",
+      2
+    ],
+    [
+      "훈민정음 끈갈피",
+      1
+    ],
+    [
+      "로 북마크",
+      1
+    ],
+    [
+      "비즈책갈피 북마크",
+      1
+    ],
+    [
+      "단풍 키링",
+      1
+    ],
+    [
+      "heart bag",
+      1
+    ],
+    [
+      "스쿱으로 키링",
+      1
+    ],
+    [
+      "뜨개 가방",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "블랑주니 BlancJoony",
+      "channel_url": "https://www.youtube.com/channel/UC2RStupJ7uEiDLBzYtW_yzQ",
+      "subscriber_count": 117000,
+      "total_views": 712,
+      "relevant_video_count": 1,
+      "cover_video_id": "l16ddSRccdQ",
+      "cover_is_short": false
+    },
+    {
+      "channel_title": "려진 ryeobanggu",
+      "channel_url": "https://www.youtube.com/channel/UC3sSFJjUJm_JWNrA3_V1ofw",
+      "subscriber_count": 61500,
+      "total_views": 13413,
+      "relevant_video_count": 1,
+      "cover_video_id": "QagP51oCOkA",
+      "cover_is_short": true
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "nYrnwAn7QLo",
+      "title": "미니별 비즈 키링 만들기🩶✨ #diy",
+      "channel_title": "상쾌한 베이글",
+      "channel_url": "https://www.youtube.com/channel/UCsPEBZ5MVlat57vO3Ym9UUw",
+      "url": "https://www.youtube.com/watch?v=nYrnwAn7QLo",
+      "published_at": "2026-10-04T15:15:35Z",
+      "view_count": 1188,
+      "views_per_hour": 152.73,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "FngZy-f_2tE",
+      "title": "꽃이 피어나는 신기한 컵받침, 이거 하나로 테이블 분위기가 180도 달라져요 #핸드메이드 #뜨개소품 #일상",
+      "channel_title": "별의별템",
+      "channel_url": "https://www.youtube.com/channel/UCRR7xzttb3LMR9VDjrTSCXA",
+      "url": "https://www.youtube.com/watch?v=FngZy-f_2tE",
+      "published_at": "2026-10-04T09:55:15Z",
+      "view_count": 1433,
+      "views_per_hour": 109.24,
+      "embeddable": false,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "2n85KxNH3r4",
+      "title": "몰랑이 키링 만들기🍦 #비즈 #비즈계 #비즈키링 #비즈키링만들기 #키링 #키링계 #키링만들기 #제리고요 #몰랑이",
+      "channel_title": "체리띠ෆ ̖́-‬",
+      "channel_url": "https://www.youtube.com/channel/UCXrDBNTdt2jXNx6SvA7JI_w",
+      "url": "https://www.youtube.com/watch?v=2n85KxNH3r4",
+      "published_at": "2026-10-04T04:45:06Z",
+      "view_count": 1212,
+      "views_per_hour": 66.28,
+      "embeddable": false,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "_Z71_m0MZQg",
+      "title": "왼손으로 만드는 손뜨개 소품- 누구나 좋아하는  맛있는 간식 🍪🍪 샌드쿠키 만들기",
+      "channel_title": "뜨개쟁이 지니",
+      "channel_url": "https://www.youtube.com/channel/UC0FFQo3fEKtScDbDvt2eQrg",
+      "url": "https://www.youtube.com/watch?v=_Z71_m0MZQg",
+      "published_at": "2026-09-28T23:52:50Z",
+      "view_count": 2300,
+      "views_per_hour": 16.07,
+      "embeddable": true,
+      "is_short": false,
+      "rising": true
+    },
+    {
+      "video_id": "_oPQqkJnNfY",
+      "title": "거북이 블라인드백 판매 종료합니다🥹🐢 마지막 재고까지만! #거북이 #거북이키링 #블라인드백 #랜덤깡 #키링 #키링만들기 #소품샵 #핸드메이드 #shorts",
+      "channel_title": "poglog",
+      "channel_url": "https://www.youtube.com/channel/UCrE5PzNI2O58SE-PN3k_UqA",
+      "url": "https://www.youtube.com/watch?v=_oPQqkJnNfY",
+      "published_at": "2026-09-30T22:26:40Z",
+      "view_count": 1133,
+      "views_per_hour": 11.73,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
