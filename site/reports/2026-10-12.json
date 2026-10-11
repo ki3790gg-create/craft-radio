@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-12",
+  "collected_at": "2026-10-11T23:03:28.698183+00:00",
+  "record_count": 41,
+  "item_signals": [
+    [
+      "비즈 키링",
+      1
+    ],
+    [
+      "시크한 키링",
+      1
+    ],
+    [
+      "레진 키링",
+      1
+    ],
+    [
+      "하나뿐인 키링",
+      1
+    ],
+    [
+      "해파리 키링",
+      1
+    ],
+    [
+      "같은 키링",
+      1
+    ],
+    [
+      "연꽃 키링",
+      1
+    ],
+    [
+      "나비 키링",
+      1
+    ],
+    [
+      "고양이 키링",
+      1
+    ],
+    [
+      "가을닮은 가방",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "스몰메이커 초란 Choran",
+      "channel_url": "https://www.youtube.com/channel/UCb6onYTT66YWvbJG5ehMacw",
+      "subscriber_count": 84300,
+      "total_views": 996,
+      "relevant_video_count": 1,
+      "cover_video_id": "85meJFjHv3s",
+      "cover_is_short": true
+    },
+    {
+      "channel_title": "코바늘 뜨개사 홀리",
+      "channel_url": "https://www.youtube.com/channel/UClYUnXgyKXTQJAII5a0ab1w",
+      "subscriber_count": 80100,
+      "total_views": 41273,
+      "relevant_video_count": 1,
+      "cover_video_id": "J24ktItSbgw",
+      "cover_is_short": true
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "FEnA5Xs_WhM",
+      "title": "감성 나만의 힐링 꽃 컵 받침.    #코바늘뜨기 #살림템 #티코스터 #홈카페소품 #홈카페인테리어",
+      "channel_title": "살림고수언니",
+      "channel_url": "https://www.youtube.com/channel/UCJIi5nhazYT5muiY4mpzHeQ",
+      "url": "https://www.youtube.com/watch?v=FEnA5Xs_WhM",
+      "published_at": "2026-10-06T10:30:33Z",
+      "view_count": 9729,
+      "views_per_hour": 73.4,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "NutioJ4-0D4",
+      "title": "연꽃 키링 만들기 || #추천 #비즈키링 #키링 #비즈공예",
+      "channel_title": "여름",
+      "channel_url": "https://www.youtube.com/channel/UCID5Gf2fF1iNYyxM4St8G6w",
+      "url": "https://www.youtube.com/watch?v=NutioJ4-0D4",
+      "published_at": "2026-10-11T01:30:20Z",
+      "view_count": 1335,
+      "views_per_hour": 61.94,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "lefQEC0uKj4",
+      "title": "[타로] 그 사람이 이별 후 지금 느끼는 진심 💔",
+      "channel_title": "타로타로",
+      "channel_url": "https://www.youtube.com/channel/UCkrh9aPkSxAXyFvJ0C0gEhA",
+      "url": "https://www.youtube.com/watch?v=lefQEC0uKj4",
+      "published_at": "2026-10-10T08:00:30Z",
+      "view_count": 2185,
+      "views_per_hour": 55.95,
+      "embeddable": false,
+      "is_short": false,
+      "rising": true
+    },
+    {
+      "video_id": "CtUNFM-RwsQ",
+      "title": "체리 열매 비즈키링 만들기 #beads #비즈 #비즈키링만들기 #비즈공예 #diy #비즈키링 #키링 #체리 #열매 #창가",
+      "channel_title": "몽글몽글",
+      "channel_url": "https://www.youtube.com/channel/UC1YcEEmncoknlmcynA0hp7A",
+      "url": "https://www.youtube.com/watch?v=CtUNFM-RwsQ",
+      "published_at": "2026-10-07T07:13:26Z",
+      "view_count": 4970,
+      "views_per_hour": 44.44,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "UtkHHLc2v9Y",
+      "title": "5분이면 완성! 코바늘 초보도 뚝딱! 미니 하트 만들기 ❤️｜Crochet Mini Heart #crochet #코바늘 #뜨개질",
+      "channel_title": "꾸리다클래스",
+      "channel_url": "https://www.youtube.com/channel/UChkqUxrF8fDm6PmXDIZBG6A",
+      "url": "https://www.youtube.com/watch?v=UtkHHLc2v9Y",
+      "published_at": "2026-10-06T05:25:43Z",
+      "view_count": 3253,
+      "views_per_hour": 23.64,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
