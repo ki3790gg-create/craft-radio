@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-19",
+  "collected_at": "2026-10-18T23:08:32.773337+00:00",
+  "record_count": 37,
+  "item_signals": [
+    [
+      "비즈 키링",
+      4
+    ],
+    [
+      "리스 키링",
+      1
+    ],
+    [
+      "나는 키링",
+      1
+    ],
+    [
+      "신청받은 키링",
+      1
+    ],
+    [
+      "beads keychain",
+      1
+    ],
+    [
+      "해파리 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "  Bongja봉자TV",
+      "channel_url": "https://www.youtube.com/channel/UCPz_R0iEjclbczA_YfUA7CQ",
+      "subscriber_count": 192000,
+      "total_views": 59628,
+      "relevant_video_count": 1,
+      "cover_video_id": "LB3FZEr3mtA",
+      "cover_is_short": false
+    },
+    {
+      "channel_title": "하다코바늘 * HaDa Crochet",
+      "channel_url": "https://www.youtube.com/channel/UCd5R_8CNNKWBq13_7_VKpLA",
+      "subscriber_count": 96700,
+      "total_views": 2821,
+      "relevant_video_count": 1,
+      "cover_video_id": "dyBBu7ImfQU",
+      "cover_is_short": false
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "ZPHr_wI624A",
+      "title": "🇹🇼 [대만여행#3] 타이베이 가성비 숙소 추천부터 시먼딩 맛집🍜 용산사 야경까지 완벽 코스 (시저 메트로, 진천미, 곱창국수)",
+      "channel_title": "쀼로드 BbyuRoad",
+      "channel_url": "https://www.youtube.com/channel/UCrPAykjU8nQ-jIVQOmzyCpA",
+      "url": "https://www.youtube.com/watch?v=ZPHr_wI624A",
+      "published_at": "2026-10-17T11:00:21Z",
+      "view_count": 1863,
+      "views_per_hour": 51.55,
+      "embeddable": true,
+      "is_short": false,
+      "rising": true
+    },
+    {
+      "video_id": "T6tEjEtXhAA",
+      "title": "비즈키링 만들깅! #눌러주세용 #비즈키링만들기 #비즈키링 #만들기 #비즈#키링 #키링만들기",
+      "channel_title": "뽕찌",
+      "channel_url": "https://www.youtube.com/channel/UCY3f2Cf9cjj5jv-gCkUuR_w",
+      "url": "https://www.youtube.com/watch?v=T6tEjEtXhAA",
+      "published_at": "2026-10-17T02:41:40Z",
+      "view_count": 1214,
+      "views_per_hour": 27.31,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "QnllepNFEwk",
+      "title": "아이 둘 엄마의 공방운영, 생각보다 쉽지 않아요ㅣ만들고 판매하고 동대문 쇼핑한 공방일상ㅣ동대문시장ㅣ쇼핑하울ㅣ파우치만들기ㅣ주방수건만들기ㅣ고군분투 공방일기ㅣ핸드메이드공방",
+      "channel_title": "단비공작소",
+      "channel_url": "https://www.youtube.com/channel/UCCOwyCWIKRc-PXHYQsvZXHw",
+      "url": "https://www.youtube.com/watch?v=QnllepNFEwk",
+      "published_at": "2026-10-13T05:08:47Z",
+      "view_count": 3231,
+      "views_per_hour": 23.41,
+      "embeddable": true,
+      "is_short": false,
+      "rising": true
+    },
+    {
+      "video_id": "6lz7y_SBBYA",
+      "title": "갓 구워낸 오로라 물고기 접시 대공개! 도예 공방 가마 여는 날",
+      "channel_title": "아틀리에지 포터메리",
+      "channel_url": "https://www.youtube.com/channel/UCxJOCXl-fE3-b6I7g3joG0Q",
+      "url": "https://www.youtube.com/watch?v=6lz7y_SBBYA",
+      "published_at": "2026-10-16T16:07:58Z",
+      "view_count": 904,
+      "views_per_hour": 16.43,
+      "embeddable": true,
+      "is_short": false,
+      "rising": true
+    },
+    {
+      "video_id": "8Uwz28gnP5g",
+      "title": "구름 비즈 키링 만들기 ☁️| Beads Keychain DIY",
+      "channel_title": "데그르르르",
+      "channel_url": "https://www.youtube.com/channel/UCAq_1sx7Mk_6AKX-W14dIRQ",
+      "url": "https://www.youtube.com/watch?v=8Uwz28gnP5g",
+      "published_at": "2026-10-15T11:01:49Z",
+      "view_count": 1279,
+      "views_per_hour": 15.21,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
