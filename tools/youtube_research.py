@@ -67,6 +67,7 @@ class YouTubeResearch:
             record["url"] = f"https://www.youtube.com/watch?v={video_id}"
             records.append(record)
 
+        records = [record for record in records if is_craft(record)]
         if self.region:
             records = keep_local(records, self.region)
 
@@ -95,13 +96,17 @@ class YouTubeResearch:
             data = self._get(
                 "/videos",
                 {
-                    "part": "statistics,contentDetails,status",
+                    "part": "statistics,contentDetails,status,snippet",
                     "id": ",".join(video_ids[batch_start:batch_start + 50]),
                 },
             )
             for item in data.get("items", []):
                 stats = item.get("statistics", {})
+                snippet = item.get("snippet", {})
                 details[item["id"]] = {
+                    # search results cut descriptions short; the full one plus tags feed is_craft()
+                    "description": snippet.get("description", ""),
+                    "tags": snippet.get("tags", []),
                     "view_count": int(stats.get("viewCount", 0)),
                     "like_count": int(stats.get("likeCount", 0)),
                     "comment_count": int(stats.get("commentCount", 0)),
@@ -131,6 +136,22 @@ class YouTubeResearch:
                     "video_count": int(stats.get("videoCount", 0)),
                 }
         return details
+
+
+# Broad search terms (e.g. "핸드메이드 소품 판매") also return off-topic videos that only share a
+# hashtag - a tarot reading and a travel vlog reached the site in Oct 2026. A video is kept only if
+# its title, description or tags name a craft material, technique or workshop.
+CRAFT_TERMS = re.compile(
+    r"뜨개|코바늘|대바늘|손뜨개|털실|뜨개실|비즈|마크라메|매듭|끈갈피|북마크|키링|팔찌|목걸이|반지|"
+    r"공예|수공예|공방|핸드메이드|자수|바느질|재봉|원단|가죽|레진|도예|도자기|"
+    r"crochet|knit|bead|macrame|keychain|keyring|bracelet|handmade|craft|embroider|\bdiy\b",
+    re.IGNORECASE,
+)
+
+
+def is_craft(record: dict[str, Any]) -> bool:
+    text = " ".join([record.get("title", ""), record.get("description", ""), " ".join(record.get("tags") or [])])
+    return bool(CRAFT_TERMS.search(text))
 
 
 HANGUL = re.compile(r"[가-힣]")

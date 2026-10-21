@@ -14,6 +14,7 @@ Every Monday at 08:00 KST, collect YouTube signals for one-person craft business
 ## Collection scope
 
 - Korea-focused (since 2026-09-29): Korean search terms only for cord crafts, bead accessories, knitting goods, macrame, and handmade selling (`tools/config.py` → `SEARCH_TERMS`), searched with `regionCode=KR` and `relevanceLanguage=ko`.
+- Craft check (since 2026-10-21): broad terms like "핸드메이드 소품 판매" also return off-topic videos that only share a hashtag — a tarot reading (10/12) and a Taiwan travel vlog (10/19) reached the site. `is_craft()` keeps a video only if its title, full description or tags contain a craft word (`CRAFT_TERMS`: 뜨개/코바늘/비즈/마크라메/매듭/키링/공방/핸드메이드/도예… and English equivalents). Description and tags come from the same `videos` call (no extra quota). Featured channels follow automatically because they are built from the kept videos. Off-topic videos are never let back in to fill the 5 slots — a week may show fewer.
 - After collection, `keep_local()` keeps only videos with a Korean title or from a channel registered in Korea (channel `country`, fetched in the same API call — no extra quota). If fewer than 5 remain, all videos are kept so the report is never empty.
 - Review window: the previous 7 days.
 - Established channels: rank by subscriber count, then by relevant video views.
