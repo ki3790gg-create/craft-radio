@@ -278,7 +278,7 @@ def render_site(reports: list[dict[str, Any]]) -> str:
         latest = reports[0]
         updated = dot_date(latest["date"])
         footer = (
-            f"최근 {len(reports)}주 보관 · 4주가 지난 리포트는 자동 삭제돼요 · "
+            f"최근 {len(reports)}주 보관 · {RETENTION_DAYS // 7}주가 지난 리포트는 자동 삭제돼요 · "
             f"최신 수집 영상 {latest['record_count']}개"
         )
     else:

@@ -16,9 +16,9 @@ class Settings:
     max_results_per_query: int = int(os.getenv("YOUTUBE_MAX_RESULTS_PER_QUERY", "25"))
 
 
-# Reports older than this many days are deleted from the site.
-RETENTION_DAYS = 28
-MAX_REPORTS = 4
+# Reports older than this many days are deleted from the site (3 weeks since 2026-10-21; was 4).
+RETENTION_DAYS = 21
+MAX_REPORTS = 3
 
 # Korea-focused: Korean search terms, searched with region KR / language ko,
 # and results kept only if the title is Korean or the channel is registered in Korea.

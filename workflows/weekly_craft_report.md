@@ -2,7 +2,7 @@
 
 ## Goal
 
-Every Monday at 08:00 KST, collect YouTube signals for one-person craft businesses selling products made with cord, beads, and knitting. Publish the result to the report website (GitHub Pages), keeping only the latest 4 weeks.
+Every Monday at 08:00 KST, collect YouTube signals for one-person craft businesses selling products made with cord, beads, and knitting. Publish the result to the report website (GitHub Pages), keeping only the latest 3 weeks (changed from 4 on 2026-10-21 at the user's request).
 
 ## How it runs
 
@@ -43,7 +43,8 @@ Every Monday at 08:00 KST, collect YouTube signals for one-person craft business
 ## Retention
 
 - One file per week in `site/reports/`, named by the KST collection date.
-- A report is deleted when it is 28 days old or older, and never more than 4 are kept (`RETENTION_DAYS`, `MAX_REPORTS` in `tools/config.py`).
+- A report is deleted when it is 21 days old or older, and never more than 3 are kept (`RETENTION_DAYS`, `MAX_REPORTS` in `tools/config.py`). The footer text reads the number of weeks from `RETENTION_DAYS`.
+- Changing the retention only takes effect on the live site at the next run; to apply it immediately, delete the extra report files from `site/reports/` and upload `site/index.html` too.
 - Deleted reports disappear from the site. They still exist in the GitHub commit history (public YouTube data only).
 - Running twice on the same day overwrites that day's file.
 

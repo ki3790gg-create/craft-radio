@@ -1,6 +1,6 @@
 # Bubble House — Weekly Craft Business Report
 
-A small Python automation that researches YouTube content for a one-person craft business and publishes a weekly report website (GitHub Pages). Only the latest 4 weeks are kept; videos play inside the page.
+A small Python automation that researches YouTube content for a one-person craft business and publishes a weekly report website (GitHub Pages). Only the latest 3 weeks are kept; videos play inside the page.
 
 ## Weekly run (GitHub Actions)
 
