@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-26",
+  "collected_at": "2026-10-26T00:49:52.615406+00:00",
+  "record_count": 41,
+  "item_signals": [
+    [
+      "비즈 키링",
+      3
+    ],
+    [
+      "오너먼트 키링",
+      3
+    ],
+    [
+      "뜨개 파우치",
+      2
+    ],
+    [
+      "위시코어 키링",
+      1
+    ],
+    [
+      "이 파우치",
+      1
+    ],
+    [
+      "귀여운 파우치",
+      1
+    ],
+    [
+      "동글동글하게 파우치",
+      1
+    ],
+    [
+      "작은 가방",
+      1
+    ],
+    [
+      "있어서 가방",
+      1
+    ],
+    [
+      "홀리데이 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "LET BE 렛비",
+      "channel_url": "https://www.youtube.com/channel/UCd7am4s4VZdy8KxGbyUSM3w",
+      "subscriber_count": 620000,
+      "total_views": 24739,
+      "relevant_video_count": 1,
+      "cover_video_id": "6OEFPfo8L2M",
+      "cover_is_short": true
+    },
+    {
+      "channel_title": "꿈마_생활꿀팁",
+      "channel_url": "https://www.youtube.com/channel/UCiP-rjkT7477066KoQPzmjg",
+      "subscriber_count": 82300,
+      "total_views": 910,
+      "relevant_video_count": 1,
+      "cover_video_id": "9ey7irnzim0",
+      "cover_is_short": true
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "d00KWtSxO_U",
+      "title": "요청받은 핑크 비즈 키링 만들기🩷 handmade keychain",
+      "channel_title": "데그르르르",
+      "channel_url": "https://www.youtube.com/channel/UCAq_1sx7Mk_6AKX-W14dIRQ",
+      "url": "https://www.youtube.com/watch?v=d00KWtSxO_U",
+      "published_at": "2026-10-25T10:49:15Z",
+      "view_count": 1162,
+      "views_per_hour": 82.94,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "0jX2lxL2jk0",
+      "title": "펄러비즈로 치이카와 할로윈장식 만들기 #치이카와 #할로윈 #halloween #chiikawa #diy",
+      "channel_title": "도하",
+      "channel_url": "https://www.youtube.com/channel/UC--XBe_aLhpPOg_GMHn3XJQ",
+      "url": "https://www.youtube.com/watch?v=0jX2lxL2jk0",
+      "published_at": "2026-10-25T02:04:30Z",
+      "view_count": 1817,
+      "views_per_hour": 79.85,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "m30IUvBBRkw",
+      "title": "구독 좋와요 부탁합니다. ❤️ #비즈 #키링 #diy #키링만들기 수요일 저녁 7시 만나요",
+      "channel_title": "다차자비즈",
+      "channel_url": "https://www.youtube.com/channel/UCk1iaipOA-23VuCtp0SBytA",
+      "url": "https://www.youtube.com/watch?v=m30IUvBBRkw",
+      "published_at": "2026-10-20T09:55:02Z",
+      "view_count": 6819,
+      "views_per_hour": 50.54,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "iO0Qysq_Iek",
+      "title": "소소한 행운 비즈키링 만들기 #beads #비즈 #diy #비즈공예 #비즈키링만들기 #키링 #공예 #행운 #소소 #소소한행운 #빗방울",
+      "channel_title": "몽글몽글",
+      "channel_url": "https://www.youtube.com/channel/UC1YcEEmncoknlmcynA0hp7A",
+      "url": "https://www.youtube.com/watch?v=iO0Qysq_Iek",
+      "published_at": "2026-10-24T05:05:57Z",
+      "view_count": 1610,
+      "views_per_hour": 36.82,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "7nhNiFraUCc",
+      "title": "도안없어서 내멋대로 만들어버린 캡모자귀도리ㅋㅋ(코바늘ver)",
+      "channel_title": "집밖구리",
+      "channel_url": "https://www.youtube.com/channel/UCrcsVVa7-O05N01pNeyefNA",
+      "url": "https://www.youtube.com/watch?v=7nhNiFraUCc",
+      "published_at": "2026-10-19T10:30:07Z",
+      "view_count": 5012,
+      "views_per_hour": 31.66,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
