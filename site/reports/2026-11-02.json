@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-02",
+  "collected_at": "2026-11-02T01:57:57.440620+00:00",
+  "record_count": 45,
+  "item_signals": [
+    [
+      "비즈 키링",
+      9
+    ],
+    [
+      "매듭 키링",
+      3
+    ],
+    [
+      "미니 파우치",
+      2
+    ],
+    [
+      "트리 키링",
+      1
+    ],
+    [
+      "미니트리 키링",
+      1
+    ],
+    [
+      "귤 키링",
+      1
+    ],
+    [
+      "별 키링",
+      1
+    ],
+    [
+      "짜임으로 파우치",
+      1
+    ],
+    [
+      "연결해 가방",
+      1
+    ],
+    [
+      "걱정인형 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "코바늘 뜨개사 홀리",
+      "channel_url": "https://www.youtube.com/channel/UClYUnXgyKXTQJAII5a0ab1w",
+      "subscriber_count": 81600,
+      "total_views": 41000,
+      "relevant_video_count": 1,
+      "cover_video_id": "yGb5ihuVrIw",
+      "cover_is_short": true
+    },
+    {
+      "channel_title": "리우비즈 | 쉽고 귀여운 비즈공예",
+      "channel_url": "https://www.youtube.com/channel/UCKS7b2p55wNX2RMi797DKbA",
+      "subscriber_count": 38500,
+      "total_views": 3494,
+      "relevant_video_count": 1,
+      "cover_video_id": "lBkbOb2ZrjA",
+      "cover_is_short": false
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "i-AvJiuvXqU",
+      "title": "핑크리본비즈키링만들기#비즈계#만들기#수린이# #추천추천추천추천추천추천추천추천추천추천",
+      "channel_title": "쿠마🧀",
+      "channel_url": "https://www.youtube.com/channel/UCPGdTnCFZbB8KHzdaeTDbKQ",
+      "url": "https://www.youtube.com/watch?v=i-AvJiuvXqU",
+      "published_at": "2026-11-01T12:01:22Z",
+      "view_count": 1147,
+      "views_per_hour": 82.26,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "ki0XV_l5QqQ",
+      "title": "뽀용뽀용한 비즈키링 만들긔💭✨# 뽀롱뽀롱한 비즈 키링 #비즈 키링 만들기 #비즈 키링 #우사기 #￼치이카와",
+      "channel_title": "블링",
+      "channel_url": "https://www.youtube.com/channel/UCv8JE1zW2F5lHqzZ6MkshtA",
+      "url": "https://www.youtube.com/watch?v=ki0XV_l5QqQ",
+      "published_at": "2026-11-01T09:17:45Z",
+      "view_count": 1222,
+      "views_per_hour": 73.3,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "uFLelc0Vy30",
+      "title": "행운의 거북이 만들기!#비즈 키링🫧",
+      "channel_title": "콩이",
+      "channel_url": "https://www.youtube.com/channel/UCtDIaGwLIaguPaaVJzCrebQ",
+      "url": "https://www.youtube.com/watch?v=uFLelc0Vy30",
+      "published_at": "2026-11-01T03:01:40Z",
+      "view_count": 1196,
+      "views_per_hour": 52.14,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "Rr61-Tej77Y",
+      "title": "빨간 버섯 비즈키링 만들기 #beads #비즈 #diy #비즈공예 #비즈키링만들기 #키링 #만들기 #버섯 #빨간색",
+      "channel_title": "몽글몽글",
+      "channel_url": "https://www.youtube.com/channel/UC1YcEEmncoknlmcynA0hp7A",
+      "url": "https://www.youtube.com/watch?v=Rr61-Tej77Y",
+      "published_at": "2026-10-28T07:19:30Z",
+      "view_count": 4692,
+      "views_per_hour": 40.93,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "sBainBotAMg",
+      "title": "조회수 38만 그래서 그게 뭔데요??",
+      "channel_title": "핑크백화점",
+      "channel_url": "https://www.youtube.com/channel/UC3A-5pdZUQJjBVs4swNQiKg",
+      "url": "https://www.youtube.com/watch?v=sBainBotAMg",
+      "published_at": "2026-10-31T05:40:43Z",
+      "view_count": 1367,
+      "views_per_hour": 30.87,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
