@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-09",
+  "collected_at": "2026-11-09T02:11:53.219597+00:00",
+  "record_count": 38,
+  "item_signals": [
+    [
+      "비즈 키링",
+      2
+    ],
+    [
+      "달면 키링",
+      2
+    ],
+    [
+      "패턴 키링",
+      2
+    ],
+    [
+      "검은고양이 키링",
+      1
+    ],
+    [
+      "star keychain",
+      1
+    ],
+    [
+      "별비즈로 키링",
+      1
+    ],
+    [
+      "꽃다발 키링",
+      1
+    ],
+    [
+      "김밥 키링",
+      1
+    ],
+    [
+      "kimbap keychain",
+      1
+    ],
+    [
+      "디자인의 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "하씨",
+      "channel_url": "https://www.youtube.com/channel/UCAimNx17PoVgIyl8WTJ4Kew",
+      "subscriber_count": 142000,
+      "total_views": 328653,
+      "relevant_video_count": 1,
+      "cover_video_id": "EnIUE25FtVA",
+      "cover_is_short": true
+    },
+    {
+      "channel_title": "귀티가 넘치는 세련된 스타일 l 혜리스초이스",
+      "channel_url": "https://www.youtube.com/channel/UCrdmUEbamPRH_qBTfO74IWw",
+      "subscriber_count": 71000,
+      "total_views": 78171,
+      "relevant_video_count": 1,
+      "cover_video_id": "MT-xIsIHv68",
+      "cover_is_short": false
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "YkKmbYZ1Fec",
+      "title": "다이소 크리스마스 실에 홀렸다가 벌어진 일…🎄l 다이소 실로 트리 만들기",
+      "channel_title": "Yummy_yarn",
+      "channel_url": "https://www.youtube.com/channel/UCPbTWjLC8kCtdlK7sJkLRhg",
+      "url": "https://www.youtube.com/watch?v=YkKmbYZ1Fec",
+      "published_at": "2026-11-03T01:19:24Z",
+      "view_count": 76233,
+      "views_per_hour": 526.2,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "2fVrbH1JTNo",
+      "title": "토끼 파르페 비즈키링 만들기🐰 #비즈키링 #비즈계 #ASMR #만들기 #추천추천추천추천추천추천추천추천추천추천",
+      "channel_title": "뿌링요정띵ᩚ",
+      "channel_url": "https://www.youtube.com/channel/UCYzI8jskNv2od709V_bCl5w",
+      "url": "https://www.youtube.com/watch?v=2fVrbH1JTNo",
+      "published_at": "2026-11-08T10:50:59Z",
+      "view_count": 1120,
+      "views_per_hour": 72.97,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "QrqaKpC55ag",
+      "title": "거북이 🐢 비즈 키링 💚만들기",
+      "channel_title": "땅콩이 ",
+      "channel_url": "https://www.youtube.com/channel/UC3PAcQC6xPbLNEQDV014z2Q",
+      "url": "https://www.youtube.com/watch?v=QrqaKpC55ag",
+      "published_at": "2026-11-08T04:30:29Z",
+      "view_count": 1402,
+      "views_per_hour": 64.64,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "0snYzlyeoaU",
+      "title": "노란 열쇠키링 만들기💛🔑 #비즈키링 #비즈계 #ASMR #추천추천추천추천추천추천추천추천추천추천",
+      "channel_title": "뿌링요정띵ᩚ",
+      "channel_url": "https://www.youtube.com/channel/UCYzI8jskNv2od709V_bCl5w",
+      "url": "https://www.youtube.com/watch?v=0snYzlyeoaU",
+      "published_at": "2026-11-08T01:17:24Z",
+      "view_count": 1329,
+      "views_per_hour": 53.36,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "2ni1Mks3lok",
+      "title": "🍀 액막이 명태 뜨기  / 🌸 그레챈의 소품가게 / #액막이명태 #액막이명태키링 #액막이명태뜨개 #액막이명태뜨기",
+      "channel_title": "그레챈의 소품가게",
+      "channel_url": "https://www.youtube.com/channel/UCRfYtoa5__hCnQEgTnpUoLA",
+      "url": "https://www.youtube.com/watch?v=2ni1Mks3lok",
+      "published_at": "2026-11-07T13:12:18Z",
+      "view_count": 1555,
+      "views_per_hour": 42.03,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
