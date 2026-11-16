@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-16",
+  "collected_at": "2026-11-16T02:28:02.999951+00:00",
+  "record_count": 35,
+  "item_signals": [
+    [
+      "비즈 키링",
+      6
+    ],
+    [
+      "트리 파우치",
+      3
+    ],
+    [
+      "beaded keychain",
+      2
+    ],
+    [
+      "천 키링",
+      2
+    ],
+    [
+      "christmas keychain",
+      1
+    ],
+    [
+      "가득한 키링",
+      1
+    ],
+    [
+      "핸드메이드 키링",
+      1
+    ],
+    [
+      "떨면서 키링",
+      1
+    ],
+    [
+      "작은 북마크",
+      1
+    ],
+    [
+      "스웨터 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "쎄비 SEVY",
+      "channel_url": "https://www.youtube.com/channel/UCyZYfXT3Ukggeo6j9L7VwSg",
+      "subscriber_count": 381000,
+      "total_views": 55,
+      "relevant_video_count": 1,
+      "cover_video_id": "3-_VUWgIz28",
+      "cover_is_short": false
+    },
+    {
+      "channel_title": "옥수수",
+      "channel_url": "https://www.youtube.com/channel/UCXsmrohIMOBIVZyesWGRB2Q",
+      "subscriber_count": 121000,
+      "total_views": 127646,
+      "relevant_video_count": 1,
+      "cover_video_id": "VKQtdhKXJ1E",
+      "cover_is_short": true
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "R30cL3-aOnY",
+      "title": "다이소 실 3볼의 마법🎄 크리스마스 트리 파우치 #crochet #뜨개질 #코바늘",
+      "channel_title": "mocha(모카상점)",
+      "channel_url": "https://www.youtube.com/channel/UCdy2BIeY08KvyudpeXXNe7A",
+      "url": "https://www.youtube.com/watch?v=R30cL3-aOnY",
+      "published_at": "2026-11-15T09:29:02Z",
+      "view_count": 2843,
+      "views_per_hour": 167.4,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "IWExfxjthbo",
+      "title": "🍀 행운 파르페 비즈키링 만들기 💚 #비즈 #비즈키링 #diy",
+      "channel_title": "애플작업실",
+      "channel_url": "https://www.youtube.com/channel/UC_EHmjnBd6n-BoDQhKNpVYw",
+      "url": "https://www.youtube.com/watch?v=IWExfxjthbo",
+      "published_at": "2026-11-15T10:14:23Z",
+      "view_count": 1007,
+      "views_per_hour": 62.05,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "DWKvTqn9-CY",
+      "title": "뜨개일기 하루일과로 가져왔어요! #보그자격증 #코바늘자격증 #코바늘강사 #인형만들기 #뜨개일기 #갓생",
+      "channel_title": "봉지공방",
+      "channel_url": "https://www.youtube.com/channel/UCFw2iGf9S46bEPYAnIAOh_g",
+      "url": "https://www.youtube.com/watch?v=DWKvTqn9-CY",
+      "published_at": "2026-11-15T04:09:55Z",
+      "view_count": 1180,
+      "views_per_hour": 52.91,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "Bpl_AOqAD_U",
+      "title": "화이트 크리스마스 비즈 키링 만들기🎄 White Christmas Keychain diy",
+      "channel_title": "데그르르르",
+      "channel_url": "https://www.youtube.com/channel/UCAq_1sx7Mk_6AKX-W14dIRQ",
+      "url": "https://www.youtube.com/watch?v=Bpl_AOqAD_U",
+      "published_at": "2026-11-12T11:03:44Z",
+      "view_count": 1246,
+      "views_per_hour": 14.26,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "pt9NVL7sZ9Y",
+      "title": "🐱[라방] 소품샵 매출 부진 고민? 살려낼 도자기 신상 긴급 점검 ✨",
+      "channel_title": "아틀리에지 포터메리",
+      "channel_url": "https://www.youtube.com/channel/UCxJOCXl-fE3-b6I7g3joG0Q",
+      "url": "https://www.youtube.com/watch?v=pt9NVL7sZ9Y",
+      "published_at": "2026-11-13T03:00:41Z",
+      "view_count": 912,
+      "views_per_hour": 12.76,
+      "embeddable": true,
+      "is_short": false,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
