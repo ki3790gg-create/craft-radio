@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-23",
+  "collected_at": "2026-11-23T03:19:50.662929+00:00",
+  "record_count": 40,
+  "item_signals": [
+    [
+      "키캡 키링",
+      5
+    ],
+    [
+      "비즈 키링",
+      5
+    ],
+    [
+      "미니트리 키링",
+      3
+    ],
+    [
+      "어그부츠 키링",
+      2
+    ],
+    [
+      "만든 키링",
+      1
+    ],
+    [
+      "은 가방",
+      1
+    ],
+    [
+      "이나 파우치",
+      1
+    ],
+    [
+      "하나뿐인 키링",
+      1
+    ],
+    [
+      "꼭대기에 키링",
+      1
+    ],
+    [
+      "거북이 키링",
+      1
+    ]
+  ],
+  "top_channels": [
+    {
+      "channel_title": "king process",
+      "channel_url": "https://www.youtube.com/channel/UCbW5tOCMJcgGGK6YtVqCLuA",
+      "subscriber_count": 890000,
+      "total_views": 15322,
+      "relevant_video_count": 1,
+      "cover_video_id": "7n72KGhh_Eg",
+      "cover_is_short": false
+    },
+    {
+      "channel_title": "옥수수",
+      "channel_url": "https://www.youtube.com/channel/UCXsmrohIMOBIVZyesWGRB2Q",
+      "subscriber_count": 122000,
+      "total_views": 66723,
+      "relevant_video_count": 1,
+      "cover_video_id": "H2dYLCUUTrQ",
+      "cover_is_short": true
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "WPBJvDPgTNs",
+      "title": "삥끼삥끼한 비즈키링🫶💞",
+      "channel_title": "블링",
+      "channel_url": "https://www.youtube.com/channel/UCv8JE1zW2F5lHqzZ6MkshtA",
+      "url": "https://www.youtube.com/watch?v=WPBJvDPgTNs",
+      "published_at": "2026-11-22T09:45:48Z",
+      "view_count": 1189,
+      "views_per_hour": 67.68,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "krGi0qfKHzA",
+      "title": "🎁오너먼트 키링 가랜드 어디든 잘 어울리는 따스한 리스🎄#코바늘뜨기 #코바늘오너먼트 #크리스마스소품 #트리장식 #뜨개소품뜨개뜨는토끼풀 #crochet #뜨개 #코바늘",
+      "channel_title": "뜨개뜨는토끼풀",
+      "channel_url": "https://www.youtube.com/channel/UCnJhx9aGzyLTBMHA9-EqKkg",
+      "url": "https://www.youtube.com/watch?v=krGi0qfKHzA",
+      "published_at": "2026-11-17T08:16:49Z",
+      "view_count": 6809,
+      "views_per_hour": 48.97,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "yf45NPEHIzc",
+      "title": "히아신스, 내손으로 만들기 🥰",
+      "channel_title": "느리네",
+      "channel_url": "https://www.youtube.com/channel/UCFbfc99yk_oyLjI6BXc3Ziw",
+      "url": "https://www.youtube.com/watch?v=yf45NPEHIzc",
+      "published_at": "2026-11-21T02:11:21Z",
+      "view_count": 1405,
+      "views_per_hour": 28.59,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "K9I-BRxGNXM",
+      "title": "요즘 이것만 쓰는 이유🧶 남는 실로 만든 미니 뜨개 파우치💕",
+      "channel_title": "살템",
+      "channel_url": "https://www.youtube.com/channel/UCn71CYqelRPzwuqXL6WniRg",
+      "url": "https://www.youtube.com/watch?v=K9I-BRxGNXM",
+      "published_at": "2026-11-17T10:49:07Z",
+      "view_count": 2252,
+      "views_per_hour": 16.5,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    },
+    {
+      "video_id": "oXBq9TVsxk8",
+      "title": "당고 비즈키링 만들기🍡#비즈계#비즈키링#beads#추천추천추천추천추천추천추천추천추천추천#비즈키링만들기#관리자님잘생겼어요#리즘아제발#떡상#츄링#링",
+      "channel_title": "츄링chu-ring ",
+      "channel_url": "https://www.youtube.com/channel/UCOAdNnxd5z-31FfWwtF5cMw",
+      "url": "https://www.youtube.com/watch?v=oXBq9TVsxk8",
+      "published_at": "2026-11-17T08:00:34Z",
+      "view_count": 1885,
+      "views_per_hour": 13.53,
+      "embeddable": true,
+      "is_short": true,
+      "rising": true
+    }
+  ],
+  "ideas": [
+    "반응이 반복되는 아이템을 1인 제작 시간과 재료비 기준으로 다시 계산한다.",
+    "완성품만 보여주기보다 짧은 제작 과정, 포장, 선물 상황을 함께 보여주는 포맷을 시험한다.",
+    "소규모 채널 급상승 영상은 첫 3초의 소재와 썸네일 문구를 기록해 다음 상품 영상에 적용한다."
+  ]
+}
